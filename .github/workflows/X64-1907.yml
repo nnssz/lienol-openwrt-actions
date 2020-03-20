@@ -10,9 +10,9 @@ name: X64-1907
 on:
 #  schedule:
 #    - cron: 0 20 * * *
-#  push:
-#    branches: 
-#      - master
+  push:
+    branches: 
+      - master
   watch:
     types: started
 
