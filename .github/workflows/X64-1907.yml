@@ -53,6 +53,15 @@ jobs:
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
+
+
+    - name: Load custom packages and config
+      run: |
+        [ -e files ] && mv files openwrt/files
+        chmod +x $DIY_SH
+        cd openwrt
+        ../$DIY_SH
+
     
     - name: Costom configure file
       run: |
@@ -65,13 +74,6 @@ jobs:
           cd openwrt
           make defconfig
 
-
-    - name: Load custom configuration
-      run: |
-        [ -e files ] && mv files openwrt/files
-        chmod +x $DIY_SH
-        cd openwrt
-        ../$DIY_SH
 
     - name: Make download
       run: |
