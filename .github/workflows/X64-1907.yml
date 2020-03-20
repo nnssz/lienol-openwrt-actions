@@ -7,12 +7,17 @@
 #=================================================
 name: X64-1907
 
+
 on:
+  release:
+    types: published
+#  push:
+#    branches:
+#      - master
+#    paths:
+#      - '.config'
 #  schedule:
-#    - cron: 0 20 * * *
-  push:
-    branches: 
-      - master
+#    - cron: 0 8 */3 * *
   watch:
     types: started
 
